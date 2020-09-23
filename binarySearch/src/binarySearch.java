@@ -7,48 +7,64 @@ public class binarySearch {
         Random rand = new Random();
         int[] array = binarySearch.fillArray();
         int wanted = array[rand.nextInt(100)];
-        binarySearch.searching(array, wanted, 0, array.length-1);
+        binarySearch.searchNumber(array, wanted);
         binarySearch.binarySearcher(array, wanted, 0, array.length-1);
     }
 
+    public int searchNumber(int[] arr, int wanted){
+        int left = 0;
+        int right = arr.length-1;
 
-    public void searching(int[] array, int wanted, int low, int high) {
-        long start = System.currentTimeMillis(); // Zeit starten - in Millisekunden
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (array[mid] < wanted) {
-                low = mid + 1;
-            } else if (array[mid] > wanted) {
-                high = mid - 1;
-            } else if (array[mid] == wanted) {
-                System.out.println(System.currentTimeMillis() - start);
-                System.out.println("Stelle:"+mid+" Gesucht:"+wanted);
-                break;
+        while(left <= right){
+            int middle = left + (right-left)/2;
+
+            if(arr[middle] == wanted){
+                return middle;
+            }
+            if(arr[left] == wanted){
+                return left;
+            }
+            if(arr[right] == wanted){
+                return right;
+            }
+
+            if(wanted < arr[middle]){
+                right = middle;
+            }else if(wanted > arr[middle]){
+                left = middle;
             }
         }
+
+        return -1;
     }
-    public int binarySearcher(int[] array, int wanted, int low , int high)
+
+    /**
+     *
+     * @param array
+     * @param wanted
+     * @param left
+     * @param right
+     * @return
+     */
+    public int binarySearcher(int[] array, int wanted, int left , int right)
     {
-        long milliseconds = System.currentTimeMillis();
-        int mid = (low + high)/2;
-        if(array[mid]<wanted)
+        long nanoseconds = System.nanoTime();
+        int middle = (left + right)/2;
+        if(array[middle]<wanted)
         {
-            return binarySearcher(array,wanted,low+1,high);
+            return binarySearcher(array,wanted,left+1,right);
         }
-        else if(array[mid]>wanted)
+        else if(array[middle]>wanted)
         {
-            return binarySearcher(array,wanted,low,high-1);
+            return binarySearcher(array,wanted,left,right-1);
         }
-        else if (array[mid]==wanted)
+        else if (array[middle]==wanted)
         {
-            System.out.println(System.currentTimeMillis()-milliseconds);
-            System.out.println("Stelle:"+mid+" Gesucht:"+wanted);
+            System.out.println(System.nanoTime()-nanoseconds);
+            System.out.println("Stelle:"+middle+" Gesucht:"+wanted);
             return wanted;
         }
-        else
-        {
-            return 0;
-        }
+        return -1;
     }
 
     public int[] fillArray() {
