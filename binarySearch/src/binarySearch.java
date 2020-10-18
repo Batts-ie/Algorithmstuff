@@ -6,14 +6,14 @@ public class binarySearch {
         binarySearch binarySearch = new binarySearch();
         Random rand = new Random();
         int[] array = binarySearch.fillArray();
-        int wanted = array[rand.nextInt(100)];
+        int wanted = array[rand.nextInt(100)]; // ist eine random Zahl von 100 Stellen
         binarySearch.searchNumber(array, wanted);
         binarySearch.binarySearcher(array, wanted, 0, array.length-1);
     }
 
     public int searchNumber(int[] arr, int wanted){
         int left = 0;
-        int right = arr.length-1;
+        int right = arr.length-1; // => 0 - 99
 
         while(left <= right){
             int middle = left + (right-left)/2;
@@ -35,7 +35,7 @@ public class binarySearch {
             }
         }
 
-        return -1;
+        return -1; // Zahl wurde nicht gefunden
     }
 
     /**
@@ -50,18 +50,18 @@ public class binarySearch {
     {
         long nanoseconds = System.nanoTime();
         int middle = (left + right)/2;
-        if(array[middle]<wanted)
+        if(array[middle] < wanted)
         {
             return binarySearcher(array,wanted,left+1,right);
         }
-        else if(array[middle]>wanted)
+        else if(array[middle] > wanted)
         {
             return binarySearcher(array,wanted,left,right-1);
         }
-        else if (array[middle]==wanted)
+        else if (array[middle] == wanted)
         {
             System.out.println(System.nanoTime()-nanoseconds);
-            System.out.println("Stelle:"+middle+" Gesucht:"+wanted);
+            System.out.println("Stelle:" + middle + " Gesucht:" + wanted);
             return wanted;
         }
         return -1;
