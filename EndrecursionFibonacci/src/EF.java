@@ -11,7 +11,7 @@ public class EF {
 	}
 	public static int eF(int zahl, int fbn1, int fbn2)
 	{
-		if(zahl <= 1) return fbn1 + fbn2;
+		if(zahl < 0) return fbn1 + fbn2;
 		else
 		{
 			return eF(zahl-1, fbn2+fbn1, fbn1);
