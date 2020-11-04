@@ -14,11 +14,11 @@ public class EF {
 		if(zahl < 0) return fbn1 + fbn2;
 		else
 		{
-			return eF(zahl-1, fbn2+fbn1, fbn1);
+			return eF(zahl - 1, fbn2 + fbn1, fbn1);
 		}
 	}
 	public static int fibonacci(int zahl)
 	{
-		return eF(zahl-1,1,0);
+		return eF(zahl - 1, 1, 0);
 	}
 }
