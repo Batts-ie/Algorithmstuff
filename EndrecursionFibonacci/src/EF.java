@@ -19,6 +19,6 @@ public class EF {
 	}
 	public static int fibonacci(int zahl)
 	{
-		return endrecursionFibonacci(zahl-1,1,0);
+		return eF(zahl-1,1,0);
 	}
 }
