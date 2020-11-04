@@ -7,7 +7,7 @@ public class EF {
 	{
 		System.out.println("Geben Sie eine Zahl ein: ");
 		_zahl = Reader.nextDouble(); 
-		System.out.println(fibonacci(n));
+		System.out.println(fibonacci(_zahl));
 	}
 	public static int eF(double zahl, int fbn1, int fbn2)
 	{
