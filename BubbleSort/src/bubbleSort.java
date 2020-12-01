@@ -11,6 +11,7 @@ public class bubbleSort {
 
 
     public static void Sorting(int array[], int n){
+        /* Stellen vergleichen - siehe oben das angegebene Array */
         if (n == 1){
             return;
         }
