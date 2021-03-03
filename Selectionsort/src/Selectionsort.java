@@ -1,12 +1,18 @@
+import java.util.Scanner;
 public class Selectionsort {
     public static void main(String[] args) {
-        int[] a = new int[100];
-        int upperlenght = 100000;
+        Scanner reader = new Scanner(System.in);
+        int arrayLenght = 0;
+        System.out.print("Wie viele Zahlen soll das Array beinhalten: ");
+        arrayLenght = reader.nextInt();
+        System.out.print("\n" + "Geben Sie die Range an: ");
+        int range = reader.nextInt();
+        reader.close();
+        int[] a = new int[arrayLenght];
         for(int i = 0; i < a.length; i++){
-            a[i] = (int)(Math.random()*upperlenght);
+            a[i] = (int)(Math.random()*range);
         }
         Sorting(a);
-        //selectionsort(a);
         System.out.println("Sorted Array ");
         PrintArrayInConsole(a); 
     }
