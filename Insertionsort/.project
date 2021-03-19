@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Selectionsort</name>
+	<name>Insertionsort</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,9 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1615792249183</id>
-			<id>1614768017908</id>
-
+			<id>1608469145102</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

@@ -1,10 +1,10 @@
 import java.util.Scanner;
 public class Fibonacci {
-    public static Scanner Reader = new Scanner(System.in);
+    final static Scanner Reader = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.print("Geben Sie eine Zahl > 0 ein: ");
         int zahl = Reader.nextInt();
-        CheckAmount(zahl);
+        checkAmount(zahl);
         System.out.println();
         System.out.println(fibb(zahl));
 
@@ -18,7 +18,7 @@ public class Fibonacci {
             return fibb(zahl-1) + fibb(zahl-2);
     }
 
-    public static int CheckAmount(int zahl){
+    public static int checkAmount(int zahl){
         if(zahl < 0) return -1;
         else {
             return zahl;
