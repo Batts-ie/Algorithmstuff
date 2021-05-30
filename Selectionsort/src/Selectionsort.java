@@ -17,7 +17,7 @@ public class Selectionsort {
         selectionsort.MMedian(selectionsort.bubblesortarr));
         selectionsort.MOutput("Insertionsort", selectionsort.Average(selectionsort.insertionsortarr), 
         selectionsort.MMedian(selectionsort.insertionsortarr));
-        selectionsort.MPrintArray("Selectionsort", selectionsort.selectionsortarr);
+        Selectionsort.MPrintArray("Selectionsort", selectionsort.selectionsortarr);
     }
 
     public static void MPrintArray(String arrayN, int arr[]){
